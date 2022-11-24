@@ -21,6 +21,21 @@ function buildConfig({ mode }) {
 	const env = loadEnv(mode, 'env', '')
 	process.env = env
 	const config = {
+		build: {
+			outDir: 'dist',
+			copyPublicDir: true,
+			publicDir: './public',
+			rollupOptions: {
+				input: {
+					index: path.resolve(__dirname, 'src/entry', 'index.html'),
+				},
+				output: {
+					chunkFileNames: 'static/js/[name]-[hash].js',
+					entryFileNames: 'static/js/entry-[name]-[hash].js',
+					assetFileNames: 'static/[ext]/[name]-[hash].[ext]'
+				}
+			}
+		},
 		resolve: {
 			alias: {
 				'@': path.join(__dirname, 'src'),
@@ -30,7 +45,7 @@ function buildConfig({ mode }) {
 		plugins: [
 			react(),
 			electron({
-				include: [ 'electron', 'preload', ],
+				include: [ 'electron', 'preload' ],
 				transformOptions: {
 					sourcemap: !!process.env.VSCODE_DEBUG,
 				},
