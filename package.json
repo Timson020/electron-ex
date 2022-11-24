@@ -1,0 +1,40 @@
+{
+  "name": "electron-demo",
+  "productName": "Electron",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Vite React Electron boilerplate.",
+  "author": "Timson020",
+  "license": "MIT",
+  "main": "dist-electron/electron/main/index.js",
+  "scripts": {
+    "dev": "vite --mode=development",
+		"uat": "vite --mode=uat",
+		"test": "vite build",
+    "build": "tsc && vite build && electron-builder"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "dependencies": {
+		"react": "^18.2.0",
+    "react-dom": "^18.2.0"
+	},
+  "devDependencies": {
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.1.0",
+    "electron": "^21.1.0",
+    "electron-builder": "^23.3.3",
+    "sass": "^1.55.0",
+    "typescript": "^4.8.4",
+    "vite": "^3.2.2",
+    "vite-electron-plugin": "^0.5.2",
+    "vite-plugin-electron-renderer": "^0.11.3"
+  },
+  "debug": {
+    "env": {
+      "VITE_DEV_SERVER_URL": "http://127.0.0.1:7777"
+    }
+  }
+}
