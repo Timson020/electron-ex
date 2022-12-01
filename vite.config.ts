@@ -21,14 +21,13 @@ function buildConfig({ mode }) {
 	const env = loadEnv(mode, 'env', '')
 	process.env = env
 	const config = {
-		root: path.join(__dirname, './src/entry/'),
 		build: {
 			outDir: 'dist',
 			copyPublicDir: true,
 			publicDir: './public',
 			rollupOptions: {
 				input: {
-					index: path.resolve(__dirname, 'src/entry', 'index.html')
+					index: path.resolve(__dirname, 'index.html')
 				},
 				output: {
 					chunkFileNames: 'static/js/[name]-[hash].js',
