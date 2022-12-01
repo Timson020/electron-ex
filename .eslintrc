@@ -1,0 +1,102 @@
+{
+	"root": true,
+	"env": {
+		"es6": true,
+		"node": true,
+		"browser": true
+	},
+	"globals": {
+		"window": true,
+		"global": true,
+		"document": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"parser": "@typescript-eslint/parser",
+		"ecmaVersion": 12,
+		"sourceType": "module",
+		"ecmaFeatures": { "jsx": true }
+	},
+	"plugins": [
+		"@typescript-eslint",
+		"react"
+	],
+	"overrides": [
+		{
+			"files": [ "*.ts", "*.tsx" ],
+			"rules": {
+				"@typescript-eslint/no-shadow": [ "error" ],
+				"no-shadow": "off",
+				"no-undef": "error"
+			}
+		}
+	],
+	"rules": {
+		// "no-unused-vars": 2,
+		"no-console": [ 2, { "allow": [ "group", "info", "groupEnd" ] } ],
+		"no-extra-semi": 2,
+		"no-empty": 2,
+		"no-eval": 2,
+		"no-undef": 2,
+		"no-nested-ternary": 0,
+		"no-unneeded-ternary": 0,
+		"no-return-assign": 0,
+		"no-trailing-spaces": 0,
+		"no-underscore-dangle": 0,
+		"no-undefined": 2,
+		"no-const-assign": 2,
+		"no-await-in-loop": 2,
+		"no-multi-spaces": 2,
+		"no-mixed-spaces-and-tabs": 2,
+		"no-use-before-define": 0,
+
+		"curly": 0,
+		"camelcase": 1,
+		"object-shorthand": 0,
+		"block-spacing": [ 2, "always" ],
+		"comma-dangle": [ 2, "never" ],
+		"comma-spacing": [ 1, { "before": false, "after": true } ],
+		"linebreak-style": 2,
+		"object-curly-newline": 1,
+		"quotes": [2, "single"],
+		"jsx-quotes": [1, "prefer-double"],
+
+		"@typescript-eslint/indent": [ 1, "tab", { "SwitchCase": 1 } ],
+		"@typescript-eslint/semi": [ 2, "never" ],
+		"@typescript-eslint/no-unused-vars": 2,
+
+		// react
+		"react/jsx-closing-bracket-location": 0,
+		"react/jsx-no-bind": 0,
+		"react/jsx-sort-props": 0,
+		"react/jsx-uses-react": 1,
+		"react/jsx-uses-vars": 1,
+		"react/no-array-index-key": 0,
+		"react/sort-comp": [ 2, {
+			"order": [ "static-methods", "lifecycle", "render" ],
+			"groups": {
+				"lifecycle": [
+					"displayName",
+					"propTypes",
+					"contextTypes",
+					"childContextTypes",
+					"getChildContext",
+					"mixins",
+					"statics",
+					"defaultProps",
+					"getDefaultProps",
+					"getInitialState",
+					"constructor",
+					"state",
+					"componentWillMount",
+					"componentDidMount",
+					"componentWillReceiveProps",
+					"shouldComponentUpdate",
+					"componentWillUpdate",
+					"componentDidUpdate",
+					"componentWillUnmount"
+				]
+			}
+		} ]
+	}
+}
